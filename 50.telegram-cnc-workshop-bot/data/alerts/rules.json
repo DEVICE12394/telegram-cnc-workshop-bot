@@ -1,0 +1,49 @@
+{
+  "alertRules": {
+    "maintenance": {
+      "enabled": true,
+      "hoursThreshold": 500,
+      "daysThreshold": 90,
+      "priority": "high"
+    },
+    "machine_failure": {
+      "enabled": true,
+      "downTimeThreshold": 1800000,
+      "priority": "critical"
+    },
+    "task_deadline": {
+      "enabled": true,
+      "hoursBeforeDeadline": 24,
+      "priority": "medium"
+    },
+    "production_alert": {
+      "enabled": true,
+      "targetMissedPercent": 20,
+      "priority": "medium"
+    },
+    "downtime_alert": {
+      "enabled": true,
+      "continuousDowntimeHours": 4,
+      "priority": "high"
+    },
+    "inventory_low": {
+      "enabled": true,
+      "priority": "medium"
+    },
+    "system_error": {
+      "enabled": true,
+      "priority": "critical"
+    }
+  },
+  "notifications": {
+    "enabled": true,
+    "channels": ["telegram"],
+    "sendBulletinAt": "18:00",
+    "autoAcknowledgeAfterHours": 24
+  },
+  "monitoring": {
+    "enabled": true,
+    "checkIntervalMs": 300000,
+    "autoCleanupOldAlertsAfterDays": 30
+  }
+}
